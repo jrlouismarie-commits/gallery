@@ -3,7 +3,8 @@
   --couleur-secondaire: #387EA2; /* bleu*/
   --couleur-tertiaire: #5BA3C6;        /* bleu soutien */
   --couleur-clair: #9BCBE5;  
-  --couleur-fond: #DDECF6;     /* bleu clair */
+  --couleur-fond: #DDECF6;
+  --couleur-texte: #1f2d3d;/* bleu clair */
 }
 .fun-font {
     font-family: 'Fredoka One', cursive; /* tu peux changer pour Comic Neue, etc. */
@@ -17,7 +18,10 @@ body {
   padding: 0;
 }
 
-
+header {
+  background-color: var(--couleur-primaire) !important;
+  color: white;
+}
 .container{
   max-width: auto;
   margin: 0 auto;
