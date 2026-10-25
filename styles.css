@@ -111,22 +111,7 @@ header {
   max-height: 90%;
 }
 
-/* --- Classes de rotation pour tes images --- */
-/* --- Pour forcer l'image tournée à bien se caler dans le cadre --- */
-.rotate-90, .rotate-minus-90 {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
 
-.rotate-90 {
-  transform: rotate(90deg);
-}
-
-.rotate-minus-90 {
-  transform: rotate(-90deg);
-}
 
 @media (max-width: 992px) {
   .masonry {
