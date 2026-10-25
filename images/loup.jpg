@@ -1,7 +1,0 @@
-python - <<'PY'
-from PIL import Image
-
-img = Image.open("images/loup.jpg")
-img = img.rotate(-90, expand=True)
-img.save("images/loup.jpg")
-PY
