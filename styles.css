@@ -1,13 +1,15 @@
-:root {
+::root {
   --couleur-primaire: #184E6C;   /* Bleu sombre */
-  --couleur-secondaire: #387EA2; /* bleu*/
-  --couleur-tertiaire: #5BA3C6;       /* bleu soutien */
+  --couleur-secondaire: #387EA2; /* Bleu */
+  --couleur-tertiaire: #5BA3C6;  /* Bleu soutien */
   --couleur-clair: #9BCBE5;  
-  --couleur-fond: #DDECF6;    /* bleu clair */
+  --couleur-fond: #DDECF6;     /* Bleu clair */
+  --couleur-texte: #184E6C;    /* Ajouté pour éviter un bug de couleur de texte */
 }
+
 .fun-font {
-    font-family: 'Fredoka One', cursive; /* tu peux changer pour Comic Neue, etc. */
-  }
+  font-family: 'Fredoka One', cursive;
+}
 
 body {
   background-color: var(--couleur-fond);
@@ -17,46 +19,49 @@ body {
   padding: 0;
 }
 
-
-.container{
-  max-width: auto;
+.container {
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   padding-top: 140px;
-
   background-color: var(--couleur-fond);
 }
 
-.bg-dark{
+.bg-dark {
   background-color: var(--couleur-primaire) !important;
 }
 
 .card {
-  border: 3px solid var(--couleur-secondaire); /* doré élégant */
+  border: 3px solid var(--couleur-secondaire);
   border-radius: 0px !important;
   overflow: hidden;
   background-color: white;
-  object-fit: cover;
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
-
-
 }
+
 .card-img-top {
   width: 100%;
   height: auto;
   display: block;
   padding: 12px;
   background-color: #fff;
+  transition: transform 0.3s ease; /* Petit effet fluide bonus */
+}
+
+/* --- Gestion de la rotation propre pour les images du loup et marmottes --- */
+.rotate-90 {
+  transform: rotate(90deg);
+  /* Si la rotation déforme la carte, on peut ajouter un scale ou l'ajuster ici si besoin */
 }
 
 .masonry {
-  column-count: 3;          /* nombre de colonnes */
-  column-gap: 1.5rem;       /* espace entre colonnes */
+  column-count: 3;          /* Nombre de colonnes sur grand écran */
+  column-gap: 1.5rem;       /* Espace entre colonnes */
 }
 
 .masonry .col {
-  break-inside: avoid;      /* empêche les coupures */
+  break-inside: avoid;      /* Empêche les cartes de se couper entre deux colonnes */
   margin-bottom: 1.5rem;
 }
 
@@ -67,15 +72,16 @@ body {
   padding: 10px 20px;
   margin: 5px;
 }
+
 .filter-btn.active {
-  background-color: var(--couleur-primaire)!important;
+  background-color: var(--couleur-primaire) !important;
   color: white;
-  border-color: var(--couleur-tertiaire)!important;
+  border-color: var(--couleur-tertiaire) !important;
 }
 
-.filter-btn:focus{
-   border-color: var(--couleur-tertiaire)!important;
-    box-shadow: none !important;
+.filter-btn:focus {
+  border-color: var(--couleur-tertiaire) !important;
+  box-shadow: none !important;
   outline: none !important;
 }
 
@@ -86,16 +92,14 @@ body {
   transform: scale(1.05);  
 }
 
-
 .filter-btn {
   transition: all 0.3s ease;
 }
 
-
 .img-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   display: none;
   justify-content: center;
   align-items: center;
@@ -106,11 +110,8 @@ body {
   max-width: 90%;
   max-height: 90%;
 }
-.rotate-90 {
-  transform: rotate(90deg); /* Change 90deg par -90deg si elles tournent dans le mauvais sens */
-}
 
-
+/* --- Responsive pour tablettes et mobiles --- */
 @media (max-width: 992px) {
   .masonry {
     column-count: 2;
