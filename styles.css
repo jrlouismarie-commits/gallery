@@ -106,7 +106,9 @@ body {
   max-width: 90%;
   max-height: 90%;
 }
-
+.rotate-90 {
+  transform: rotate(90deg); /* Change 90deg par -90deg si elles tournent dans le mauvais sens */
+}
 
 
 @media (max-width: 992px) {
